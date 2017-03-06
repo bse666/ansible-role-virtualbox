@@ -15,9 +15,14 @@
     url: http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc
     state: present
 
+- name: Add VirtualBox 2016 repo key
+  apt_key:
+    url: http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc
+    state: present
+    
 - name: Add VirtualBox repo
   apt_repository:
-    repo: 'deb http://download.virtualbox.org/virtualbox/debian {{ansible_distribution_release }} contrib'
+    repo: 'deb http://download.virtualbox.org/virtualbox/debian {{ansible_distribution_release}} contrib'
     state: present
     update_cache: yes
 
