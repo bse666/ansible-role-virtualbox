@@ -6,11 +6,14 @@
     state: present
   with_items:
     - apache2
-    - php7
-    - php7-common
+    - libapache2-mod-php
+    - php7.0
+    - php7.0-common
     - php-soap
+    - php7.0-soap
     - php-xml
-    - php7-gd
+    - php7.0-xml
+    - php7.0-gd
 
 - name: Make sure webdir for phpVirtualBox exists
   file:
